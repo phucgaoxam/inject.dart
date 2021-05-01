@@ -285,8 +285,7 @@ class _ProviderSummaryVisitor extends InjectClassVisitor {
   bool _checkReturnType(
       ExecutableElement executableElement, Element returnTypeElement) {
     if (returnTypeElement.kind == ElementKind.DYNAMIC ||
-        returnTypeElement is TypeDefiningElement &&
-            returnTypeElement.type.isDynamic) {
+        returnTypeElement is TypeDefiningElement) {
       builderContext.log.severe(
         executableElement,
         'provider return type resolved to dynamic. This can happen when the '
