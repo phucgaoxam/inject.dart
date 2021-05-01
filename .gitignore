@@ -3,7 +3,6 @@
 **/.pub/
 */build/
 */*/build/
-**/pubspec.lock
 
 package/inject/android/
 package/inject/ios/
