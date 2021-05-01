@@ -64,7 +64,7 @@ class InjectSummaryBuilder extends AbstractInjectBuilder {
       } else {
         builderContext.rawLogger.severe(
           'Failed to analyze ${buildStep.inputId}. Please check that the '
-              'file is a valid Dart library.',
+          'file is a valid Dart library.',
         );
       }
       summary = new LibrarySummary(new Uri(
@@ -99,8 +99,8 @@ class _SummaryBuilderVisitor extends InjectLibraryVisitor {
       builderContext.log.severe(
         clazz,
         'has @provide annotation on both the class and on one of the '
-            'constructors or factories. Please annotate one or the other, '
-            'but not both.',
+        'constructors or factories. Please annotate one or the other, '
+        'but not both.',
       );
     }
 
@@ -108,7 +108,7 @@ class _SummaryBuilderVisitor extends InjectLibraryVisitor {
       builderContext.log.severe(
         clazz,
         'has more than one constructor. Please annotate one of the '
-            'constructors instead of the class.',
+        'constructors instead of the class.',
       );
     }
 
@@ -167,7 +167,7 @@ class _SummaryBuilderVisitor extends InjectLibraryVisitor {
         builderContext.log.severe(
           clazz,
           'module class must not declare providers as getters, '
-              'but only as methods.',
+          'but only as methods.',
         );
         return false;
       }
@@ -290,10 +290,10 @@ class _ProviderSummaryVisitor extends InjectClassVisitor {
       builderContext.log.severe(
         executableElement,
         'provider return type resolved to dynamic. This can happen when the '
-            'return type is not specified, when it is specified as `dynamic`, or '
-            'when the return type failed to resolve to a proper type due to a '
-            'bad import or a typo. Do make sure that there are no analyzer '
-            'warnings in your code.',
+        'return type is not specified, when it is specified as `dynamic`, or '
+        'when the return type failed to resolve to a proper type due to a '
+        'bad import or a typo. Do make sure that there are no analyzer '
+        'warnings in your code.',
       );
       return false;
     }
@@ -332,11 +332,11 @@ ProviderSummary _createConstructorProviderSummary(
               builderContext.log.severe(
                 p,
                 'a constructor argument type resolved to dynamic. This can '
-                    'happen when the return type is not specified, when it is '
-                    'specified as `dynamic`, or when the return type failed '
-                    'to resolve to a proper type due to a bad import or a '
-                    'typo. Do make sure that there are no analyzer warnings '
-                    'in your code.',
+                'happen when the return type is not specified, when it is '
+                'specified as `dynamic`, or when the return type failed '
+                'to resolve to a proper type due to a bad import or a '
+                'typo. Do make sure that there are no analyzer warnings '
+                'in your code.',
               );
               return null;
             }

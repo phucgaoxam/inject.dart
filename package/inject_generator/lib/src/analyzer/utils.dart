@@ -11,10 +11,10 @@ import 'package:inject_generator/src/source/symbol_path.dart';
 
 /// Constructs a serializable path to [element].
 SymbolPath getSymbolPath(Element element) {
-  if (element is TypeDefiningElement && element.type.isDynamic) {
-    throw new ArgumentError('Dynamic element type not supported. This is a '
-        'package:inject bug. Please report it.');
-  }
+  // if (element is TypeDefiningElement && element.type.isDynamic) {
+  //   throw new ArgumentError('Dynamic element type not supported. This is a '
+  //       'package:inject bug. Please report it.');
+  // }
   return new SymbolPath.fromAbsoluteUri(
     element.library.source.uri,
     element.name,
@@ -67,9 +67,9 @@ ElementAnnotation _getAnnotation(Element element, SymbolPath annotationSymbol,
       builderContext.log.severe(
         annotation.element ?? element,
         'While looking for annotation ${pathToAnnotation} on "${element}", '
-            'failed to resolve annotation value. A common cause of this error is '
-            'a misspelling or a failure to resolve the import where the '
-            'annotation comes from.',
+        'failed to resolve annotation value. A common cause of this error is '
+        'a misspelling or a failure to resolve the import where the '
+        'annotation comes from.',
       );
     } else if (getSymbolPath(valueElement) == annotationSymbol) {
       return annotation;
